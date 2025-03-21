@@ -7,6 +7,8 @@
 #include <algorithm>
 #include <map>
 
+using namespace std;
+
 // Estrutura do nó da árvore de Huffman
 struct HuffmanNode {
     int valor, indice;
@@ -22,5 +24,11 @@ struct Compare {
     }
 };
 
+// Função para criar a árvore de Huffman
+HuffmanNode* criarArvoreHuffman(const vector<int>& valores);
+// Função para Gerar os Códigos de Huffman
+void gerarCodigos(HuffmanNode* raiz, map<int, string>& codigos, string codigo = "");
+// Função para obter o código de Huffman de um elemento na posição desejada
+string obterCodigoHuffman(vector<int>& valores, int posicao);
 
 #endif

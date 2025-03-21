@@ -1,23 +1,6 @@
 #include "gerarArvores.h"
 
 
-using namespace std;
-
-// Estrutura do nó da árvore de Huffman
-struct HuffmanNode {
-    int valor, indice;
-    HuffmanNode *esq, *dir;
-    
-    HuffmanNode(int valor, int indice = -1) : valor(valor), indice(indice), esq(nullptr), dir(nullptr) {}
-};
-
-// Comparador para a fila de prioridade
-struct Compare {
-    bool operator()(HuffmanNode* a, HuffmanNode* b) {
-        return a->valor > b->valor;
-    }
-};
-
 // Função para criar a árvore de Huffman
 HuffmanNode* criarArvoreHuffman(const vector<int>& valores) {
     priority_queue<HuffmanNode*, vector<HuffmanNode*>, Compare> fila;
@@ -43,7 +26,7 @@ HuffmanNode* criarArvoreHuffman(const vector<int>& valores) {
 }
 
 // Função para Gerar os Códigos de Huffman
-void gerarCodigos(HuffmanNode* raiz, map<int, string>& codigos, string codigo = "") {
+void gerarCodigos(HuffmanNode* raiz, map<int, string>& codigos, string codigo) {
     if (!raiz) return;
     
     // Se for uma folha, armazena o índice e seu código
@@ -56,7 +39,13 @@ void gerarCodigos(HuffmanNode* raiz, map<int, string>& codigos, string codigo = 
 }
 
 // Função para obter o código de Huffman de um elemento na posição desejada
-string obterCodigoHuffman(const vector<int>& valores, int posicao) {
+string obterCodigoHuffman(vector<int>& valores, int posicao) {
+
+        
+    sort(valores.begin(), valores.end(), [](int a, int b) {
+        return a > b;
+    });
+    
     if (posicao < 0 || posicao >= valores.size()) {
         return "Erro: Posição inválida.";
     }

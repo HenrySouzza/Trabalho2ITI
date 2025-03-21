@@ -1,8 +1,5 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <cctype>
-#include <algorithm>
+#include "k0.h"
+
 using namespace std;
 
 
@@ -15,8 +12,3 @@ using namespace std;
 
 
 
-int main(){
-    
-
-    return 0;
-}
