@@ -6,34 +6,34 @@ using namespace std;
 
 ContextoMenos1::ContextoMenos1(){
 
-    caracteresNaoVistos = 27;
+    caracteresNaoVistos = 5;
     caracteres[0] = Caracter('a');
     caracteres[1] = Caracter('b');
     caracteres[2] = Caracter('c');
     caracteres[3] = Caracter('d');
-    caracteres[4] = Caracter('e');
-    caracteres[5] = Caracter('f');
-    caracteres[6] = Caracter('g');
-    caracteres[7] = Caracter('h');
-    caracteres[8] = Caracter('i');
-    caracteres[9] = Caracter('j');
-    caracteres[10] = Caracter('k');
-    caracteres[11] = Caracter('l');
-    caracteres[12] = Caracter('m');
-    caracteres[13] = Caracter('n');
-    caracteres[14] = Caracter('o');
-    caracteres[15] = Caracter('p');
-    caracteres[16] = Caracter('q');
-    caracteres[17] = Caracter('r');
-    caracteres[18] = Caracter('s');
-    caracteres[19] = Caracter('t');
-    caracteres[20] = Caracter('u');
-    caracteres[21] = Caracter('v');
-    caracteres[22] = Caracter('w');
-    caracteres[23] = Caracter('x');
-    caracteres[24] = Caracter('y');
-    caracteres[25] = Caracter('z');
-    caracteres[26] = Caracter(' ');
+    // caracteres[4] = Caracter('e');
+    // caracteres[5] = Caracter('f');
+    // caracteres[6] = Caracter('g');
+    // caracteres[7] = Caracter('h');
+    // caracteres[8] = Caracter('i');
+    // caracteres[9] = Caracter('j');
+    // caracteres[10] = Caracter('k');
+    // caracteres[11] = Caracter('l');
+    // caracteres[12] = Caracter('m');
+    // caracteres[13] = Caracter('n');
+    // caracteres[14] = Caracter('o');
+    // caracteres[15] = Caracter('p');
+    // caracteres[16] = Caracter('q');
+    caracteres[4] = Caracter('r');
+    // caracteres[18] = Caracter('s');
+    // caracteres[19] = Caracter('t');
+    // caracteres[20] = Caracter('u');
+    // caracteres[21] = Caracter('v');
+    // caracteres[22] = Caracter('w');
+    // caracteres[23] = Caracter('x');
+    // caracteres[24] = Caracter('y');
+    // caracteres[25] = Caracter('z');
+    // caracteres[26] = Caracter(' ');
     
 };
 

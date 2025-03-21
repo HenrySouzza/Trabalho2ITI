@@ -39,77 +39,77 @@ string LeitorDeArquivo::getUltimasSaidas(int contexto){
     return saidas;
 }
 
-int main() {
-    // Cria o objeto para ler o arquivo
-    LeitorDeArquivo leitor("saida.txt");
+// int main() {
+//     // Cria o objeto para ler o arquivo
+//     LeitorDeArquivo leitor("saida.txt");
 
-    // Lê letra por letra
-    leitor.atualizarLetras();
-    leitor.atualizarLetras();
-    leitor.atualizarLetras();
+//     // Lê letra por letra
+//     leitor.atualizarLetras();
+//     leitor.atualizarLetras();
+//     leitor.atualizarLetras();
 
-    cout << endl;
-    cout << leitor.getUltimasSaidas(0) << endl;
-    cout << leitor.getUltimasSaidas(1) << endl;
-    cout << leitor.getUltimasSaidas(2) << endl;
-    cout << leitor.getUltimasSaidas(3) << endl;
-    cout << leitor.getUltimasSaidas(4) << endl;
-    cout << leitor.getUltimasSaidas(5) << endl;
-    cout << endl;
+//     cout << endl;
+//     cout << leitor.getUltimasSaidas(0) << endl;
+//     cout << leitor.getUltimasSaidas(1) << endl;
+//     cout << leitor.getUltimasSaidas(2) << endl;
+//     cout << leitor.getUltimasSaidas(3) << endl;
+//     cout << leitor.getUltimasSaidas(4) << endl;
+//     cout << leitor.getUltimasSaidas(5) << endl;
+//     cout << endl;
 
-    leitor.atualizarLetras();
+//     leitor.atualizarLetras();
 
-    cout << endl;
-    cout << leitor.getUltimasSaidas(0) << endl;
-    cout << leitor.getUltimasSaidas(1) << endl;
-    cout << leitor.getUltimasSaidas(2) << endl;
-    cout << leitor.getUltimasSaidas(3) << endl;
-    cout << leitor.getUltimasSaidas(4) << endl;
-    cout << leitor.getUltimasSaidas(5) << endl;
-    cout << endl;
+//     cout << endl;
+//     cout << leitor.getUltimasSaidas(0) << endl;
+//     cout << leitor.getUltimasSaidas(1) << endl;
+//     cout << leitor.getUltimasSaidas(2) << endl;
+//     cout << leitor.getUltimasSaidas(3) << endl;
+//     cout << leitor.getUltimasSaidas(4) << endl;
+//     cout << leitor.getUltimasSaidas(5) << endl;
+//     cout << endl;
 
-    leitor.atualizarLetras();
+//     leitor.atualizarLetras();
 
-    cout << endl;
-    cout << leitor.getUltimasSaidas(0) << endl;
-    cout << leitor.getUltimasSaidas(1) << endl;
-    cout << leitor.getUltimasSaidas(2) << endl;
-    cout << leitor.getUltimasSaidas(3) << endl;
-    cout << leitor.getUltimasSaidas(4) << endl;
-    cout << leitor.getUltimasSaidas(5) << endl;
-    cout << endl;
+//     cout << endl;
+//     cout << leitor.getUltimasSaidas(0) << endl;
+//     cout << leitor.getUltimasSaidas(1) << endl;
+//     cout << leitor.getUltimasSaidas(2) << endl;
+//     cout << leitor.getUltimasSaidas(3) << endl;
+//     cout << leitor.getUltimasSaidas(4) << endl;
+//     cout << leitor.getUltimasSaidas(5) << endl;
+//     cout << endl;
 
-    leitor.atualizarLetras();
+//     leitor.atualizarLetras();
 
-    cout << endl;
-    cout << leitor.getUltimasSaidas(0) << endl;
-    cout << leitor.getUltimasSaidas(1) << endl;
-    cout << leitor.getUltimasSaidas(2) << endl;
-    cout << leitor.getUltimasSaidas(3) << endl;
-    cout << leitor.getUltimasSaidas(4) << endl;
-    cout << leitor.getUltimasSaidas(5) << endl;
-    cout << endl;
+//     cout << endl;
+//     cout << leitor.getUltimasSaidas(0) << endl;
+//     cout << leitor.getUltimasSaidas(1) << endl;
+//     cout << leitor.getUltimasSaidas(2) << endl;
+//     cout << leitor.getUltimasSaidas(3) << endl;
+//     cout << leitor.getUltimasSaidas(4) << endl;
+//     cout << leitor.getUltimasSaidas(5) << endl;
+//     cout << endl;
 
-    leitor.atualizarLetras();
+//     leitor.atualizarLetras();
 
-    cout << endl;
-    cout << leitor.getUltimasSaidas(0) << endl;
-    cout << leitor.getUltimasSaidas(1) << endl;
-    cout << leitor.getUltimasSaidas(2) << endl;
-    cout << leitor.getUltimasSaidas(3) << endl;
-    cout << leitor.getUltimasSaidas(4) << endl;
-    cout << leitor.getUltimasSaidas(5) << endl;
-    cout << endl;
+//     cout << endl;
+//     cout << leitor.getUltimasSaidas(0) << endl;
+//     cout << leitor.getUltimasSaidas(1) << endl;
+//     cout << leitor.getUltimasSaidas(2) << endl;
+//     cout << leitor.getUltimasSaidas(3) << endl;
+//     cout << leitor.getUltimasSaidas(4) << endl;
+//     cout << leitor.getUltimasSaidas(5) << endl;
+//     cout << endl;
 
-    leitor.atualizarLetras();
+//     leitor.atualizarLetras();
 
-    cout << endl;
-    cout << leitor.getUltimasSaidas(0) << endl;
-    cout << leitor.getUltimasSaidas(1) << endl;
-    cout << leitor.getUltimasSaidas(2) << endl;
-    cout << leitor.getUltimasSaidas(3) << endl;
-    cout << leitor.getUltimasSaidas(4) << endl;
-    cout << leitor.getUltimasSaidas(5) << endl;
-    cout << endl;
-    return 0;
-}
+//     cout << endl;
+//     cout << leitor.getUltimasSaidas(0) << endl;
+//     cout << leitor.getUltimasSaidas(1) << endl;
+//     cout << leitor.getUltimasSaidas(2) << endl;
+//     cout << leitor.getUltimasSaidas(3) << endl;
+//     cout << leitor.getUltimasSaidas(4) << endl;
+//     cout << leitor.getUltimasSaidas(5) << endl;
+//     cout << endl;
+//     return 0;
+// }
