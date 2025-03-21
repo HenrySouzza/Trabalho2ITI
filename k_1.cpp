@@ -5,7 +5,7 @@
 using namespace std;
 
 ContextoMenos1::ContextoMenos1(){
-    
+
     caracteresNaoVistos = 27;
     caracteres[0] = Caracter('a');
     caracteres[1] = Caracter('b');

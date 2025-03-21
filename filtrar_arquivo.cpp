@@ -1,10 +1,4 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <cctype>
-#include <algorithm>
-#include <unordered_map>
-#include "k_1.h"
+#include "filtrar_arquivo.h"
 using namespace std;
 
 
@@ -38,20 +32,4 @@ void limpar_texto(ifstream& arquivo_entrada, ofstream& arquivo_saida) {
     }
     arquivo_entrada.close();
     arquivo_saida.close();
-}
-
-int main() {
-    ifstream arquivo("MemoriasPostumas.txt");
-    if (!arquivo) {
-        cerr << "Erro ao abrir o arquivo de entrada!" << endl;
-        return 1;
-    }
-    ofstream arquivo_saida("saida.txt");
-    if (!arquivo_saida) {
-        cerr << "Erro ao abrir o arquivo de saída!" << endl;
-        return 1;
-    }
-    limpar_texto(arquivo, arquivo_saida);
-
-    return 0;
 }
