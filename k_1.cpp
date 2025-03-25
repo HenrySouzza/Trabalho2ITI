@@ -11,6 +11,7 @@ ContextoMenos1::ContextoMenos1(){
     caracteres[1] = Caracter('b');
     caracteres[2] = Caracter('c');
     caracteres[3] = Caracter('d');
+    caracteres[4] = Caracter('r');
     // caracteres[4] = Caracter('e');
     // caracteres[5] = Caracter('f');
     // caracteres[6] = Caracter('g');
@@ -24,7 +25,7 @@ ContextoMenos1::ContextoMenos1(){
     // caracteres[14] = Caracter('o');
     // caracteres[15] = Caracter('p');
     // caracteres[16] = Caracter('q');
-    caracteres[4] = Caracter('r');
+    // caracteres[17] = Caracter('r');
     // caracteres[18] = Caracter('s');
     // caracteres[19] = Caracter('t');
     // caracteres[20] = Caracter('u');

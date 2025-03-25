@@ -38,15 +38,20 @@ string K0::chamarRO(char simboloNuncaVisto){
     codigo = codigo + " " + codigoDoNuncavisto;
     adicionarSimbolo(simboloNuncaVisto);
 
+    if(simbolosNuncaVistos == 0){
+       simbolo[posicaoSimbolo('R')].frequencia = 0;
+       simboloNuncaVisto--;
+    }
+
     return codigo;
 }
 vector<int> K0::getFrequencias(){
     int tamanho = getPrimeiraPosicaoVazia();
     vector<int> frequencias(tamanho);
-    cout << "Tabela de frequencias" << endl;
+    //cout << "Tabela de frequencias" << endl;
     for(int i=0; i<tamanho; i++){
         frequencias[i] = simbolo[i].frequencia;
-                        cout << i <<". " << simbolo[i].simbolo <<" casa. Frequencia -> " << frequencias[i] << endl;
+        //cout << i <<". " << simbolo[i].simbolo <<" casa. Frequencia -> " << frequencias[i] << endl;
     }
     return frequencias;
 }
@@ -60,11 +65,12 @@ string K0::arvoreCodigoSimbolo(int posicao){
     return obterCodigoHuffman(valores, posicao);
 }
 
-string K0::gerarCodigo(char simbolo){
+string K0::gerarCodigo(string palavra){
     ordenarSimbolos();
+    char simbolo = palavra[0];
     string codigo = "";
     int posicao = posicaoSimbolo(simbolo);
-    cout << "Posicao do simbolo " << simbolo << " -> " << posicao << endl;
+    //cout << "Posicao do simbolo " << simbolo << " -> " << posicao << endl;
     if(posicao == -1){
         codigo = chamarRO(simbolo);
     }else{
@@ -77,10 +83,17 @@ string K0::gerarCodigo(char simbolo){
 
 int main(){
     K0 k0;
-    const char* palavra = "abracadabra";
-    for(int i=0; i<11; i++){
-        cout << palavra[i]<< " -> " <<k0.gerarCodigo(palavra[i]) << endl;
+    string palavra = "abracadabra";
+
+    LeitorDeArquivo leitor("saida.txt");
+
+    for(int i = 0; i < 11; i++){
+        leitor.atualizarLetras();
+        palavra = leitor.getUltimasSaidas(0);
+        cout << palavra<< " -> " <<k0.gerarCodigo(palavra) << endl;
     }
+
+    return 0;
 }
 
 

@@ -3,6 +3,7 @@
 
 #include"k_1.h"
 #include"gerarArvores.h"
+#include"leitor.h"
 
 #include<iostream>
 #include <string>
@@ -25,7 +26,7 @@ struct SimbolosK0
 class K0{
 private:
 
-    SimbolosK0 simbolo[27];
+    SimbolosK0 simbolo[28];
     int simbolosNuncaVistos;
     int totalSimbolosLidos;
     ContextoMenos1 contextoMenos1;
@@ -38,7 +39,7 @@ public:
     vector<int> getFrequencias();
     void adicionarFrequencia(int posicao);
     string arvoreCodigoSimbolo(int posicao);
-    string gerarCodigo(char simbolo);
+    string gerarCodigo(string palavra);
     int getPrimeiraPosicaoVazia();
 };
 

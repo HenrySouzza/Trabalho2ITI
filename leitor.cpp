@@ -57,59 +57,5 @@ string LeitorDeArquivo::getUltimasSaidas(int contexto){
 //     cout << leitor.getUltimasSaidas(5) << endl;
 //     cout << endl;
 
-//     leitor.atualizarLetras();
-
-//     cout << endl;
-//     cout << leitor.getUltimasSaidas(0) << endl;
-//     cout << leitor.getUltimasSaidas(1) << endl;
-//     cout << leitor.getUltimasSaidas(2) << endl;
-//     cout << leitor.getUltimasSaidas(3) << endl;
-//     cout << leitor.getUltimasSaidas(4) << endl;
-//     cout << leitor.getUltimasSaidas(5) << endl;
-//     cout << endl;
-
-//     leitor.atualizarLetras();
-
-//     cout << endl;
-//     cout << leitor.getUltimasSaidas(0) << endl;
-//     cout << leitor.getUltimasSaidas(1) << endl;
-//     cout << leitor.getUltimasSaidas(2) << endl;
-//     cout << leitor.getUltimasSaidas(3) << endl;
-//     cout << leitor.getUltimasSaidas(4) << endl;
-//     cout << leitor.getUltimasSaidas(5) << endl;
-//     cout << endl;
-
-//     leitor.atualizarLetras();
-
-//     cout << endl;
-//     cout << leitor.getUltimasSaidas(0) << endl;
-//     cout << leitor.getUltimasSaidas(1) << endl;
-//     cout << leitor.getUltimasSaidas(2) << endl;
-//     cout << leitor.getUltimasSaidas(3) << endl;
-//     cout << leitor.getUltimasSaidas(4) << endl;
-//     cout << leitor.getUltimasSaidas(5) << endl;
-//     cout << endl;
-
-//     leitor.atualizarLetras();
-
-//     cout << endl;
-//     cout << leitor.getUltimasSaidas(0) << endl;
-//     cout << leitor.getUltimasSaidas(1) << endl;
-//     cout << leitor.getUltimasSaidas(2) << endl;
-//     cout << leitor.getUltimasSaidas(3) << endl;
-//     cout << leitor.getUltimasSaidas(4) << endl;
-//     cout << leitor.getUltimasSaidas(5) << endl;
-//     cout << endl;
-
-//     leitor.atualizarLetras();
-
-//     cout << endl;
-//     cout << leitor.getUltimasSaidas(0) << endl;
-//     cout << leitor.getUltimasSaidas(1) << endl;
-//     cout << leitor.getUltimasSaidas(2) << endl;
-//     cout << leitor.getUltimasSaidas(3) << endl;
-//     cout << leitor.getUltimasSaidas(4) << endl;
-//     cout << leitor.getUltimasSaidas(5) << endl;
-//     cout << endl;
 //     return 0;
 // }
