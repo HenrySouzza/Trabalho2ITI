@@ -38,7 +38,7 @@ string K0::chamarRO(char simboloNuncaVisto){
     codigo = codigo + " " + codigoDoNuncavisto;
     adicionarSimbolo(simboloNuncaVisto);
 
-    if(simbolosNuncaVistos == 0){
+    if(simbolo[posicaoSimbolo('R')].frequencia == 27){
        simbolo[posicaoSimbolo('R')].frequencia = 0;
        simboloNuncaVisto--;
     }
@@ -87,7 +87,7 @@ int main(){
 
     LeitorDeArquivo leitor("saida.txt");
 
-    for(int i = 0; i < 11; i++){
+    for(int i = 0; i < 28; i++){
         leitor.atualizarLetras();
         palavra = leitor.getUltimasSaidas(0);
         cout << palavra<< " -> " <<k0.gerarCodigo(palavra) << endl;
