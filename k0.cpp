@@ -1,4 +1,5 @@
 #include "k0.h"
+#include "conversor.h"
 
 
 
@@ -35,7 +36,7 @@ string K0::chamarRO(char simboloNuncaVisto){
     simbolo[posicaoSimbolo('R')].frequencia++;
 
     string codigoDoNuncavisto = contextoMenos1.getCodigoNuncaVisto(simboloNuncaVisto);
-    codigo = codigo + " " + codigoDoNuncavisto;
+    codigo = codigo + "" + codigoDoNuncavisto;
     adicionarSimbolo(simboloNuncaVisto);
 
     if(simbolo[posicaoSimbolo('R')].frequencia == 27){
@@ -86,13 +87,22 @@ int main(){
     string palavra = "abracadabra";
 
     LeitorDeArquivo leitor("saida.txt");
+    conversor conversor("saida.bin");
 
-    for(int i = 0; i < 28; i++){
+
+    string bufferBinario;
+
+    while(leitor.temMaisLetras()) {
         leitor.atualizarLetras();
         palavra = leitor.getUltimasSaidas(0);
-        cout << palavra<< " -> " <<k0.gerarCodigo(palavra) << endl;
+        string codigo = k0.gerarCodigo(palavra);
+
+        conversor.adicionarcodigo(codigo);
+      
     }
 
+    conversor.fechararquivo();
+ 
     return 0;
 }
 
