@@ -1,7 +1,10 @@
 #include "k0.h"
 #include "conversor.h"
+#include <chrono>
+#include <cmath>
 
 
+using namespace std::chrono;
 
 K0::K0(){
     simbolosNuncaVistos=27;
@@ -84,7 +87,12 @@ string K0::gerarCodigo(string palavra){
 
 int main(){
     K0 k0;
-    string palavra = "abracadabra";
+    string palavra;
+
+    double total_de_bits = 0;
+    int total_de_caracteres = 0;
+    vector<int> frequencias(256,0);
+    high_resolution_clock::time_point inicio = high_resolution_clock::now();
 
     LeitorDeArquivo leitor("saida.txt");
     conversor conversor("saida.bin");
@@ -95,13 +103,36 @@ int main(){
     while(leitor.temMaisLetras()) {
         leitor.atualizarLetras();
         palavra = leitor.getUltimasSaidas(0);
+
+        char c = palavra[0];
+        frequencias[c]++;
+        total_de_caracteres++;
         string codigo = k0.gerarCodigo(palavra);
+        total_de_bits += codigo.size();
 
         conversor.adicionarcodigo(codigo);
       
     }
 
     conversor.fechararquivo();
+    high_resolution_clock::time_point fim = high_resolution_clock::now();
+    auto duracao_ns = duration_cast<nanoseconds>(fim - inicio).count();
+    double duracao_segundos = duracao_ns / 1'000'000'000.0;
+    
+    double entropia = 0;
+    for(int i=0; i<256; i++){
+        if(frequencias[i] != 0){
+            double probabilidade = frequencias[i]/(double)total_de_caracteres;
+            entropia += probabilidade * log2(1/probabilidade);
+        }
+    }
+
+    double comprimento_medio = total_de_bits/total_de_caracteres;
+
+    // Exibição das métricas
+    cout << "Tempo de compressão: " << duracao_segundos << " s" << endl;
+    cout << "Entropia da fonte: " << entropia << " bits/simbolo" << endl;
+    cout << "Comprimento médio do código: " << comprimento_medio << " bits/simbolo" << endl;
  
     return 0;
 }
