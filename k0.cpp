@@ -2,6 +2,7 @@
 #include "conversor.h"
 #include <chrono>
 #include <cmath>
+#include "k1.h"
 
 
 using namespace std::chrono;
@@ -85,54 +86,67 @@ string K0::gerarCodigo(string palavra){
     return codigo;
 }
 
-int main(){
+int main() {
     K0 k0;
+    K1 k1;
     string palavra;
+    char contextoAnterior = '\0';
 
-    double total_de_bits = 0;
+    double total_de_bits_k0 = 0;
+    double total_de_bits_k1 = 0;
     int total_de_caracteres = 0;
-    vector<int> frequencias(256,0);
+    vector<int> frequencias(256, 0);
     high_resolution_clock::time_point inicio = high_resolution_clock::now();
 
     LeitorDeArquivo leitor("saida.txt");
-    conversor conversor("saida.bin");
+    conversor conversorK0("saida.bin");
+    conversor conversorK1("saida2.bin");
 
-
-    string bufferBinario;
-
-    while(leitor.temMaisLetras()) {
+    while (leitor.temMaisLetras()) {
         leitor.atualizarLetras();
         palavra = leitor.getUltimasSaidas(0);
-
         char c = palavra[0];
+
         frequencias[c]++;
         total_de_caracteres++;
-        string codigo = k0.gerarCodigo(palavra);
-        total_de_bits += codigo.size();
 
-        conversor.adicionarcodigo(codigo);
-      
+        // Processa com K0
+        string codigoK0 = k0.gerarCodigo(palavra);
+        total_de_bits_k0 += codigoK0.size();
+        conversorK0.adicionarcodigo(codigoK0);
+
+        // Processa com K1
+        string codigoK1 = k1.gerarCodigo(contextoAnterior, palavra);
+        total_de_bits_k1 += codigoK1.size();
+        conversorK1.adicionarcodigo(codigoK1);
+
+        // Atualiza contexto anterior para próxima iteração
+        contextoAnterior = c;
     }
 
-    conversor.fechararquivo();
+    conversorK0.fechararquivo();
+    conversorK1.fechararquivo();
+    
     high_resolution_clock::time_point fim = high_resolution_clock::now();
     auto duracao_ns = duration_cast<nanoseconds>(fim - inicio).count();
     double duracao_segundos = duracao_ns / 1'000'000'000.0;
     
     double entropia = 0;
-    for(int i=0; i<256; i++){
-        if(frequencias[i] != 0){
-            double probabilidade = frequencias[i]/(double)total_de_caracteres;
-            entropia += probabilidade * log2(1/probabilidade);
+    for (int i = 0; i < 256; i++) {
+        if (frequencias[i] != 0) {
+            double probabilidade = frequencias[i] / (double)total_de_caracteres;
+            entropia += probabilidade * log2(1 / probabilidade);
         }
     }
 
-    double comprimento_medio = total_de_bits/total_de_caracteres;
+    double comprimento_medio_k0 = total_de_bits_k0 / total_de_caracteres;
+    double comprimento_medio_k1 = total_de_bits_k1 / total_de_caracteres;
 
     // Exibição das métricas
     cout << "Tempo de compressão: " << duracao_segundos << " s" << endl;
     cout << "Entropia da fonte: " << entropia << " bits/simbolo" << endl;
-    cout << "Comprimento médio do código: " << comprimento_medio << " bits/simbolo" << endl;
+    cout << "Comprimento médio do código K0: " << comprimento_medio_k0 << " bits/simbolo" << endl;
+    cout << "Comprimento médio do código K1: " << comprimento_medio_k1 << " bits/simbolo" << endl;
  
     return 0;
 }
