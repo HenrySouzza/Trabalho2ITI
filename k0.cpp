@@ -3,6 +3,7 @@
 #include <chrono>
 #include <cmath>
 #include "k1.h"
+#include "k2.h"
 
 
 using namespace std::chrono;
@@ -89,11 +90,13 @@ string K0::gerarCodigo(string palavra){
 int main() {
     K0 k0;
     K1 k1;
+    K2 k2;
     string palavra;
     char contextoAnterior = '\0';
 
     double total_de_bits_k0 = 0;
     double total_de_bits_k1 = 0;
+    double total_de_bits_k2 = 0;
     int total_de_caracteres = 0;
     vector<int> frequencias(256, 0);
     high_resolution_clock::time_point inicio = high_resolution_clock::now();
@@ -101,6 +104,7 @@ int main() {
     LeitorDeArquivo leitor("saida.txt");
     conversor conversorK0("saida.bin");
     conversor conversorK1("saida2.bin");
+    conversor conversorK2("saida3.bin");
 
     while (leitor.temMaisLetras()) {
         leitor.atualizarLetras();
@@ -120,12 +124,18 @@ int main() {
         total_de_bits_k1 += codigoK1.size();
         conversorK1.adicionarcodigo(codigoK1);
 
+        // Processa com K2
+        string codigoK2 = k2.gerarCodigo(string(1, contextoAnterior), palavra);
+        total_de_bits_k2 += codigoK2.size();
+        conversorK2.adicionarcodigo(codigoK2);
+
         // Atualiza contexto anterior para próxima iteração
         contextoAnterior = c;
     }
 
     conversorK0.fechararquivo();
     conversorK1.fechararquivo();
+    conversorK2.fechararquivo();
     
     high_resolution_clock::time_point fim = high_resolution_clock::now();
     auto duracao_ns = duration_cast<nanoseconds>(fim - inicio).count();
@@ -141,12 +151,15 @@ int main() {
 
     double comprimento_medio_k0 = total_de_bits_k0 / total_de_caracteres;
     double comprimento_medio_k1 = total_de_bits_k1 / total_de_caracteres;
+    double comprimento_medio_k2 = total_de_bits_k2 / total_de_caracteres;
 
     // Exibição das métricas
     cout << "Tempo de compressão: " << duracao_segundos << " s" << endl;
     cout << "Entropia da fonte: " << entropia << " bits/simbolo" << endl;
     cout << "Comprimento médio do código K0: " << comprimento_medio_k0 << " bits/simbolo" << endl;
     cout << "Comprimento médio do código K1: " << comprimento_medio_k1 << " bits/simbolo" << endl;
+    cout << "Comprimento médio do código K2: " << comprimento_medio_k2 << " bits/simbolo" << endl;
+    cout << "Taxa de compressão K0: " << (total_de_caracteres * 8) / total_de_bits_k0 << endl;
  
     return 0;
 }
