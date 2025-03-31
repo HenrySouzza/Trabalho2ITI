@@ -972,28 +972,7 @@ void GerenciadorContextos::atualizarContextos(string& contexto, char simboloDese
     
 }
 
-char GerenciadorContextos::getSimboloK0PorPosicao(int pos){
-    int posFiltrada = 0;
-    // Percorre os símbolos inseridos até o índice livre
-    for (int i = 0; i < proximaPosicaoLivre; ++i) {
-        char s = simbolosK0[i].representacao;
-        // Ignora símbolos não definidos ou que estão na lista de exclusão
-        if (s == '\0' || simbolosParaExclusao.find(s) != string::npos) {
-            continue;
-        }
-        // Se a posição filtrada corresponder à desejada, retorna o símbolo
-        if (posFiltrada == pos) {
-            return s;
-        }
-        posFiltrada++;
-    }
-    // Caso a posição não seja encontrada, retorna caractere nulo
-    return '\0';
-}
-
-
-
-/*int main() {
+int main() {
     GerenciadorContextos gerenciador;
     
 
@@ -1030,14 +1009,9 @@ char GerenciadorContextos::getSimboloK0PorPosicao(int pos){
  char c;
  cin >> c;
     return 0;
-}*/
+}
 
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
-using namespace std;
-
+/*
 // Função stub: decodifica um símbolo com base nas frequências fornecidas.
 // Ela deve ler do fluxo de bits (bitstream) a partir da posição bitPos e retornar o índice decodificado.
 // bitPos é atualizado com a quantidade de bits lidos.
@@ -1240,3 +1214,4 @@ int main(int argc, char* argv[]) {
     cout << "Descompressão finalizada." << endl;
     return 0;
 }
+*/
