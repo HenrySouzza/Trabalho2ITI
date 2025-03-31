@@ -31,12 +31,16 @@ void LeitorDeArquivo::atualizarLetras() {
     ultimasSaidas[0] = lerProximaLetra();
 }
 
-string LeitorDeArquivo::getUltimasSaidas(int contexto){
+string LeitorDeArquivo::getContexto(int contexto){
     string saidas = "";
-    for(int i = 0; i <= contexto; i++){
+    for(int i = contexto; i > 0; i--){
         saidas += ultimasSaidas[i];
     }
     return saidas;
+}
+
+char LeitorDeArquivo::getUltimasSaidas(){
+    return ultimasSaidas[0];
 }
 
 // int main() {

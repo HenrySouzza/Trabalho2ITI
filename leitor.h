@@ -26,7 +26,9 @@ public:
 
     void atualizarLetras();
 
-    string getUltimasSaidas(int contexto);
+    string getContexto(int contexto);
+
+    char getUltimasSaidas();
 };
 
 #endif

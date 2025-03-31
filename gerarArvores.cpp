@@ -2,7 +2,7 @@
 
 
 // Função para criar a árvore de Huffman
-HuffmanNode* criarArvoreHuffman(const vector<int>& valores) {
+HuffmanNode* criarArvoreHuffman(const vector<double>& valores) {
     priority_queue<HuffmanNode*, vector<HuffmanNode*>, Compare> fila;
     
     // Criar nós iniciais com índice único para cada elemento
@@ -26,7 +26,7 @@ HuffmanNode* criarArvoreHuffman(const vector<int>& valores) {
 }
 
 // Função para Gerar os Códigos de Huffman
-void gerarCodigos(HuffmanNode* raiz, map<int, string>& codigos, string codigo) {
+void gerarCodigos(HuffmanNode* raiz, map<double, string>& codigos, string codigo) {
     if (!raiz) return;
     
     // Se for uma folha, armazena o índice e seu código
@@ -39,24 +39,23 @@ void gerarCodigos(HuffmanNode* raiz, map<int, string>& codigos, string codigo) {
 }
 
 // Função para obter o código de Huffman de um elemento na posição desejada
-string obterCodigoHuffman(vector<int>& valores, int posicao) {
+string obterCodigoHuffman(vector<double>& valores, int posicao) {
 
         
-    sort(valores.begin(), valores.end(), [](int a, int b) {
+    sort(valores.begin(), valores.end(), [](double a, double b) {
         return a > b;
     });
     
     if (posicao < 0 || posicao >= valores.size()) {
-        return "Erro: Posição inválida.";
+        return "";
     }
     
     HuffmanNode* raiz = criarArvoreHuffman(valores);
     
     // Gerar mapa de códigos
-    map<int, string> codigos;
-    gerarCodigos(raiz, codigos);
+    map<double, string> codigos;
+    gerarCodigos(raiz, codigos, "");
     
     return codigos[posicao];
 }
-
 

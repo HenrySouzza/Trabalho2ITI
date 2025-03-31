@@ -6,12 +6,11 @@ using namespace std;
 
 ContextoMenos1::ContextoMenos1(){
 
-    caracteresNaoVistos = 5;
+    caracteresNaoVistos = 27;
     caracteres[0] = Caracter('a');
     caracteres[1] = Caracter('b');
     caracteres[2] = Caracter('c');
     caracteres[3] = Caracter('d');
-    //caracteres[4] = Caracter('r');
     caracteres[4] = Caracter('e');
     caracteres[5] = Caracter('f');
     caracteres[6] = Caracter('g');
