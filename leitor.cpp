@@ -42,24 +42,3 @@ string LeitorDeArquivo::getContexto(int contexto){
 char LeitorDeArquivo::getUltimasSaidas(){
     return ultimasSaidas[0];
 }
-
-// int main() {
-//     // Cria o objeto para ler o arquivo
-//     LeitorDeArquivo leitor("saida.txt");
-
-//     // Lê letra por letra
-//     leitor.atualizarLetras();
-//     leitor.atualizarLetras();
-//     leitor.atualizarLetras();
-
-//     cout << endl;
-//     cout << leitor.getUltimasSaidas(0) << endl;
-//     cout << leitor.getUltimasSaidas(1) << endl;
-//     cout << leitor.getUltimasSaidas(2) << endl;
-//     cout << leitor.getUltimasSaidas(3) << endl;
-//     cout << leitor.getUltimasSaidas(4) << endl;
-//     cout << leitor.getUltimasSaidas(5) << endl;
-//     cout << endl;
-
-//     return 0;
-// }

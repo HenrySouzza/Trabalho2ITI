@@ -56,10 +56,7 @@ public:
 
 private:
     void processarBuffer() {
-        // Aqui você implementaria a lógica específica de descompressão
-        // Por enquanto, apenas converte os bits de volta para caracteres ASCII
-        // (Isso é um placeholder - você precisará adaptar para seu esquema de codificação real)
-        
+
         // Processa em blocos de 8 bits
         while (bufferBits.length() >= 8) {
             string byteStr = bufferBits.substr(0, 8);
@@ -71,15 +68,3 @@ private:
     }
 };
 
-// int main() {
-//     try {
-//         Descompressor descompressor("saida.bin", "saidadescomprimida.txt");
-//         descompressor.descomprimir();
-//         cout << "Descompressão concluída com sucesso!" << endl;
-//     } catch (const exception& e) {
-//         cerr << "Erro: " << e.what() << endl;
-//         return 1;
-//     }
-    
-//     return 0;
-// }
